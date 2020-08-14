@@ -1,0 +1,56 @@
+<!-- /templates/form.html-->
+
+<html>
+    <body>
+        <form action="/form-handler" method="POST">
+            <div class="form-group">
+            <div>
+                Keyword: <input class="form-control" type="text" name="keyword"><br>
+            </div>
+            <div>
+                From: <input class="form-control" type="date" name="from-date"><br>
+            </div>
+            <div>
+                To: <input class="form-control" type="date" name="to-date"><br>
+            </div>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Sources</label>
+                <select class="form-control" name="sources">
+                    <option>Bloomberg</option>
+                    {% for source in sources.sources %}
+                    <option>{{source.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Category</label>
+                <select class="form-control" name="category">
+                  <option>all</option>
+                  <option>business</option>
+                  <option>entertainment</option>
+                  <option>general</option>
+                  <option>health</option>
+                  <option>science</option>
+                  <option>sports</option>
+                  <option>technology</option>
+                </select>
+              </div>
+
+            <input type="submit" value="Submit">
+          </form>
+    </body>
+
+    <!-- minimal styling -->
+    <style>
+        form {
+            margin: 2%;
+        }
+
+        div {
+            margin: 2% 0;
+        }
+    </style>
+</html>
